@@ -3,6 +3,7 @@
 # Copyright 2020-2021 Hewlett Packard Enterprise Development LP
 
 %define bin_dir /usr/bin
+%define script_dir /opt/cray/cray-node-exporter
 
 Name: cray-node-exporter
 Vendor: Hewlett Packard Enterprise Company
@@ -25,7 +26,9 @@ binary and corresponding service.
 %files
 %defattr(755, root, root)
 %dir %{bin_dir}
+%dir %{script_dir}
 %{bin_dir}/node_exporter
+%{script_dir}/post-install-configure.sh
 
 %prep
 %setup -q
@@ -35,3 +38,7 @@ binary and corresponding service.
 %install
 install -m 755 -d %{buildroot}%{bin_dir}/
 install -m 755 node_exporter %{buildroot}%{bin_dir}
+install -m 755 post-install-configure.sh %{buildroot}%{script_dir}
+
+%post
+%{script_dir}/post-install-configure.sh
