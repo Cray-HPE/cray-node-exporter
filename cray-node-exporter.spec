@@ -43,3 +43,10 @@ install -m 755 post-install-configure.sh %{buildroot}%{script_dir}
 
 %post
 %{script_dir}/post-install-configure.sh
+
+%preun
+if [ "$1" = 0 ] ; then
+  systemctl stop cray-node-exporter
+  rm /etc/systemd/system/cray-node-exporter.service
+fi
+exit 0
