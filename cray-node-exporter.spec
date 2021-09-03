@@ -37,6 +37,7 @@ binary and corresponding service.
 
 %install
 install -m 755 -d %{buildroot}%{bin_dir}/
+install -m 755 -d %{buildroot}%{script_dir}/
 install -m 755 node_exporter %{buildroot}%{bin_dir}
 install -m 755 post-install-configure.sh %{buildroot}%{script_dir}
 
