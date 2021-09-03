@@ -25,6 +25,7 @@ binary and corresponding service.
 %files
 %defattr(755, root, root)
 %dir %{bin_dir}
+%dir %{bin_dir}/files
 %{bin_dir}/files/node_exporter
 
 %prep
