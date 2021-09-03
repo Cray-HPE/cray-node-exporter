@@ -13,7 +13,7 @@ Release: %(echo ${BUILD_METADATA})
 Source: %{name}-%{version}.tar.bz2
 
 # Compiling not currently required:
-BuildArchitectures: linux-amd64
+BuildArchitectures: x86-64
 
 Requires: jq
 Requires: python3-boto3
