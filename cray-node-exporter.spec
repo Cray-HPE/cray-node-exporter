@@ -33,4 +33,5 @@ binary and corresponding service.
 %build
 
 %install
+install -m 755 -d %{buildroot}%{bin_dir}/
 install -m 755 files/node_exporter %{buildroot}%{bin_dir}
