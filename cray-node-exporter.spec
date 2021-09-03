@@ -25,8 +25,7 @@ binary and corresponding service.
 %files
 %defattr(755, root, root)
 %dir %{bin_dir}
-%dir %{bin_dir}/files
-%{bin_dir}/files/node_exporter
+%{bin_dir}/node_exporter
 
 %prep
 %setup -q
@@ -35,4 +34,4 @@ binary and corresponding service.
 
 %install
 install -m 755 -d %{buildroot}%{bin_dir}/
-install -m 755 files/node_exporter %{buildroot}%{bin_dir}
+install -m 755 node_exporter %{buildroot}%{bin_dir}
