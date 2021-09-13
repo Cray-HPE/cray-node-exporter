@@ -16,14 +16,10 @@ ExecStart=/usr/bin/node_exporter \
 --collector.logind \
 --collector.meminfo_numa \
 --collector.mountstats \
---collector.ntp \
 --collector.processes \
 --collector.qdisc \
 --collector.systemd \
---collector.tcpstat \
---collector.textfile.directory /var/lib/cray-node-exporter/textfile_collector
-#--collector.filesystem.ignored-mount-points '^/(dev|proc|sys|var/lib/docker/.+)($|/)' \
-#--collector.filesystem.ignored-fs-types '^(autofs|binfmt_misc|cgroup|configfs|debugfs|devpts|devtmpfs|fusectl|hugetlbfs|mqueue|overlay|proc|procfs|pstore|rpc_pipefs|securityfs|sysfs|tracefs)$' \
+--collector.tcpstat
 SyslogIdentifier=cray-node-exporter
 Restart=always
 RestartSec=1
